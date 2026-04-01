@@ -8,6 +8,7 @@ import { CustomersTotalRewardPoints } from "./components/customers-total-reward-
 
 function App() {
   const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const TotalRewardPoints = useMemo(() => {
@@ -75,6 +76,7 @@ function App() {
         setData(response);
       } catch (error) {
         // toast error message.
+        setError("Failed to fetch data");
         console.log(error);
       } finally {
         setLoading(false);
@@ -84,6 +86,10 @@ function App() {
 
   if (loading) {
     return <div className="skeleton"></div>;
+  }
+
+  if (error) {
+    return <div className="error">{error}</div>;
   }
 
   return (

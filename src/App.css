@@ -1,0 +1,17 @@
+section{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.table-container{
+    display: flex;
+    gap: 40px;
+    margin: 0 auto;
+    max-width: 1024px;
+    flex-wrap: wrap;
+}

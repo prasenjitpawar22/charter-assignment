@@ -12,7 +12,7 @@ import Select from "./components/form/select";
 function App() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [lastXMonths, setLastXMonths] = useState(3);
 
   const TotalRewardPoints = useMemo(() => {
@@ -82,11 +82,12 @@ function App() {
   // simulate fetching data from an API with a delay of 5 seconds.
   useEffect(() => {
     (async () => {
+      setLoading(true);
       try {
         const response = await new Promise((res) => {
           setTimeout(() => {
             res(transactionsData);
-          });
+          }, 2 * 1000);
         });
         setData(response);
       } catch (error) {
@@ -99,7 +100,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <div className="skeleton"></div>;
+    return <div className="skeleton">Loading data</div>;
   }
 
   if (error) {

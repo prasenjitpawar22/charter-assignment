@@ -144,3 +144,6 @@ Run ESLint to check code quality:
 ```bash
 pnpm run lint
 ```
+
+![alt text](./public/app-preivew.png)
+![alt text](./public/test-preview.png)

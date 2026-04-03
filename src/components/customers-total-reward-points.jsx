@@ -12,7 +12,7 @@ export function CustomersTotalRewardPoints({ TotalRewardPoints }) {
           </thead>
           <tbody>
             {Object.values(TotalRewardPoints).length === 0 ? (
-              <tr class="no-data-row">
+              <tr className="no-data-row">
                 <td colSpan="2">No records found.</td>
               </tr>
             ) : (

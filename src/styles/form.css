@@ -1,0 +1,37 @@
+select {
+  width: fit-content;       /* or 100% if you want full width */
+  margin: 8px 0;
+  padding: 6px 14px;
+
+  font-size: 14px;
+  background: var(--bg);
+
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  box-shadow: var(--shadow-sm);
+
+  &,
+  &::picker(select) {
+    appearance: base-select;
+    box-shadow: var(--shadow-sm);
+    border: solid 1px var(--border);
+    border-radius: 15px;
+  }
+}
+
+/* Hover */
+select:hover {
+  border-color: #888;
+}
+
+/* Focus */
+select:focus {
+  outline: none;
+  border-color: var(--border-focus, #4a90e2);
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.3);
+}
+
+/* Options (limited browser support but still works in Firefox/others) */
+select option {
+  padding: 4px;
+}

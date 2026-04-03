@@ -1,30 +1,54 @@
 export function CustomersTotalTransactions({ transactionsRewardPoints }) {
+  if (!transactionsRewardPoints || transactionsRewardPoints.length === 0) {
+    return (
+      <div className="card">
+        <h2>Total Transactions</h2>
+        <div className="customer-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Customer Name</th>
+                <th>Order Date</th>
+                <th data="number">Sales</th>
+                <th data="number">Reward Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="no-data-row">
+                <td colSpan="5">No records found.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div>
+    <div className="card">
       <h2>Total Transactions</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Order ID</th>
-            <th>Customer Name</th>
-            <th>Order Date</th>
-            <th data="number">Sales</th>
-            <th data="number">Reward Points</th>
-          </tr>
-        </thead>
-        <tbody>
-          {transactionsRewardPoints.map((data) => (
-            <tr key={data["Row ID"]}>
-              <td>{data["Order ID"]}</td>
-              <td>{data["Customer Name"]}</td>
-              <td>{data["Order Date"]}</td>
-              <td data="number"> ${data["Sales"].toFixed(2)}</td>
-              <td data="number"> {Math.round(data.rewardPoints)}</td>
+      <div className="customer-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Customer Name</th>
+              <th>Order Date</th>
+              <th data="number">Sales</th>
+              <th data="number">Reward Points</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {transactionsRewardPoints.map((data, i) => (
+              <tr key={i}>
+                <td>{data.customerName}</td>
+                <td>{data.orderDate}</td>
+                <td data="number"> ${data.sales.toFixed(2)}</td>
+                <td data="number"> {Math.round(data.rewardPoints)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

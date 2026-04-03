@@ -8,9 +8,3 @@ export function getRewardPoints(sales) {
   
   return points;
 }
-
-// dd/mm/yyyy ---> yyyy/mm/dd
-export const parseDate = (dateStr) => {
-  const [day, month, year] = dateStr.split("/");
-  return new Date(`${year}/${month}/${day}`);
-};

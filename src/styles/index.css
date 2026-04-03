@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "Geist";
+  src: url("@/assets/fonts/Geist-ExtraBold.otf") format("opentype");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("@/assets/fonts/Geist-Bold.otf") format("opentype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("@/assets/fonts/Geist-Medium.otf") format("opentype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("@/assets/fonts/Geist-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --text: #272727;
+  --text-h: #202020;
+  --bg: #fff;
+  --card-bg: #fff;
+  --border: #e5e4e7;
+  --accent: #f8f8f8;
+  --accent-bg: rgba(152, 152, 152, 0.1);
+  --accent-border: rgba(223, 223, 223, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: "Geist", "Segoe UI", Roboto, sans-serif;
+  --heading: "Geist", "Segoe UI", Roboto, sans-serif;
+
+  font: 18px/145% var(--sans); /* font-size/line-height font-family */
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --card-bg: #1e2028;
+    --border: #2e303a;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  padding: 20px 20px;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 48px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 32px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 26px 0;
+}
+
+td,
+th,
+thead,
+tbody {
+  padding: 8px;
+}
+
+th {
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+tr {
+  border-bottom: solid 1px var(--border);
+  &:hover {
+    background: var(--accent-bg);
+  }
+  transition: background 0.3s ease;
+}
+
+td {
+  text-align: start;
+  font-size: 14px;
+}
+
+td[data="number"] {
+  text-align: end;
+}
+
+th {
+  text-align: start;
+  font-size: 14px;
+}
+
+th[data="number"] {
+  text-align: end;
+}
+
+.no-data-row {
+  border: none;
+  &:hover {
+    background: var(--bg);
+  }
+  td {
+    text-align: center;
+    color: var(--text);
+    font-size: 12px;
+    border: none;
+  }
+}

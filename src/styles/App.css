@@ -1,0 +1,33 @@
+section {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+.table-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin: 0 auto;
+  max-width: 1024px;
+  flex-wrap: wrap;
+}
+
+.customer-table {
+  max-height: 500px;
+  height: fit-content;
+  overflow-y: auto;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  border: solid 1px var(--border);
+  box-shadow: var(--shadow-sm);
+  height: fit-content;
+}

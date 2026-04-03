@@ -145,5 +145,8 @@ Run ESLint to check code quality:
 pnpm run lint
 ```
 
-![alt text](./public/app-preivew.png)
-![alt text](./public/test-preview.png)
+### App screenshot
+![app](./public/app-preivew.png)
+
+### Test cases screenshot
+![test case](./public/test-preview.png)

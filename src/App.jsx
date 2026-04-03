@@ -125,7 +125,7 @@ function App() {
           setLastXMonths(Number(e));
         }}
       />
-      <h1>Customer's {lastXMonths.toString() || "All"} months Data</h1>
+      <h1>Customer's {lastXMonths || "all"} months data</h1>
       <div className="table-container">
         <CustomersTotalTransactions
           transactionsRewardPoints={transactionsRewardPoints}
